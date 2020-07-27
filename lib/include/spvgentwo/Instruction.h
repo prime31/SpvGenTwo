@@ -1005,11 +1005,9 @@ namespace spvgentwo
 			return error();
 		}
 
-		spvgentwo::Type::Iterator it = nullptr;
+		auto it = pBaseType->getSubType(0u, _firstIndex, _indices...);
 		if (pBaseType->isStruct())
 			it = pBaseType->getSubType(_firstIndex, _indices...);
-		else
-			it = pBaseType->getSubType(0u, _firstIndex, _indices...);
 
 		if (it != nullptr)
 		{
