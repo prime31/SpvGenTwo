@@ -71,8 +71,6 @@ target_include_directories(SpvGenTwoCommon PRIVATE "${lib_includes}")
 target_include_directories(SpvGenTwoCommon PUBLIC "${common_includes}")
 target_link_libraries(SpvGenTwoCommon PRIVATE SpvGenTwoLib)
 
-target_link_libraries(SpvGenTwoCommon PUBLIC SpvGenTwoLib)
-
 #example project
 if(${SPVGENTWO_BUILD_EXAMPLES})
 	add_sources("example/source/*.cpp" "example_sources")
