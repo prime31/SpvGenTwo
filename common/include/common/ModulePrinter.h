@@ -81,7 +81,7 @@ namespace spvgentwo
 
 			void append(const char* _pStr, const char* _pushColor = nullptr, const char* _popColor = nullptr) final { m_strFunc(_pStr, _pushColor, _popColor); }
 
-			bool append(const Constant& _constant, const char* _pushColor = nullptr, const char* _popColor = nullptr) final { m_constantFunc(_constant, _pushColor, _popColor); };
+			bool append(const Constant& _constant, const char* _pushColor = nullptr, const char* _popColor = nullptr) final { return m_constantFunc(_constant, _pushColor, _popColor); };
 
 		private:
 			FuncStr m_strFunc{};
@@ -152,8 +152,8 @@ namespace spvgentwo
 		using PrintOptions = Flag<PrintOptionsBits>;
 
 		// returns false on failure / invalid instruction
-		bool printInstruction(const Instruction& _instr, const Grammar& _grammar, IModulePrinter& _pOutput, PrintOptions _options = PrintOptionsBits::All, const char* _pIndentation = "\t\t");
+		bool printInstruction(const Instruction& _instr, const Grammar& _grammar, IModulePrinter& _printer, PrintOptions _options = PrintOptionsBits::All, const char* _pIndentation = "\t\t");
 
-		bool printModule(const Module& _module, const Grammar& _grammar, IModulePrinter& _pOutput, PrintOptions _options = PrintOptionsBits::All, const char* _pIndentation = "\t\t");
+		bool printModule(const Module& _module, const Grammar& _grammar, IModulePrinter& _printer, PrintOptions _options = PrintOptionsBits::All, const char* _pIndentation = "\t\t");
 	} // !ModulePrinter
 }
