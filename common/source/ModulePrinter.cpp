@@ -4,6 +4,7 @@
 #include "spvgentwo/Module.h"
 #include "spvgentwo/ModuleTemplate.inl"
 #include "spvgentwo/Grammar.h"
+#include "spvgentwo/Templates.h"
 
 #include <cstdio>
 

@@ -4,6 +4,7 @@
 #include "spvgentwo/Reader.h"
 
 #include "spvgentwo/InstructionTemplate.inl"
+#include "spvgentwo/Templates.h"
 
 spvgentwo::BasicBlock::BasicBlock(Function* _pFunction, const char* _pName) : List(_pFunction->getAllocator()),
 	m_pFunction(_pFunction),
