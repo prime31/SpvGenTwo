@@ -122,7 +122,9 @@ spvgentwo::Instruction* spvgentwo::Function::getFunctionTypeInstr() const
 
 const char* spvgentwo::Function::getName() const
 {
-	return m_pModule->getName(&m_Function);
+	const char* str = m_pModule->getName(&m_Function, sgt_uint32_max);
+	if (str == nullptr) return "NULL";
+	return str;
 }
 
 spvgentwo::List<spvgentwo::Instruction*> spvgentwo::Function::remove(const BasicBlock* _pBB, BasicBlock* _pReplacement, IAllocator* _pAllocator)
